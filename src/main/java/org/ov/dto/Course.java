@@ -27,18 +27,39 @@ public class Course {
         this.credit = credit;
         this.department = department;
         this.id = String.format("C%03d",nextId++);
+        this.students = new Student[200];
     }
 
-//    @Override
-//    public String toString() {
-//        return "Course {" +
-//                "Id='" + id + '\'' +
-//                ", Course Name='" + courseName + '\'' +
-//                ", Credit=" + credit +
-//                ", Teacher=" + teacher +
-//                ", Department=" + department +
-//                ", Student Number=" + studentNum +
-//                ", Students=" + Arrays.toString(students) +
-//                '}';
-//    }
+    public void addStudent(Student student) {
+        if (students[0] == null) {
+            //add the student
+            students[0] = student;
+        }
+        else if (students[1] == null) {
+            //reach the cap
+            students[1] = student;
+        }
+        else {
+            System.out.printf("There are %d students already", 200);
+        }
+    }
+
+    @Override
+    public String toString() {
+        String studentsStr = "[";
+        for (Student student : students) {
+            if (student != null) {
+                studentsStr += "]";
+            }
+        }
+        return "Course {" +
+                "Id='" + id + '\'' +
+                ", Course Name='" + courseName + '\'' +
+                ", Credit=" + credit +
+                ", Teacher=" + teacher +
+                ", Department=" + department +
+                ", Student Number=" + studentNum +
+                ", Students=" + studentsStr +
+                '}';
+    }
 }

@@ -25,6 +25,7 @@ public class Student {
         this.lastName = lastName;
         this.department = department;
         this.id = String.format("S%03d",nextId++);
+        this.courses = new Course[5];
     }
 
     @Override
