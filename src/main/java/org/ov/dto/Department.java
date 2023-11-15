@@ -1,5 +1,13 @@
 package org.ov.dto;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
+@EqualsAndHashCode
+@Getter
+@Setter
+
 public class Department {
     //Fields
     private String id;

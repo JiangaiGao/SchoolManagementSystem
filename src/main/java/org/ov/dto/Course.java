@@ -1,6 +1,14 @@
 package org.ov.dto;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Arrays;
+
+@EqualsAndHashCode
+@Getter
+@Setter
 
 public class Course {
     //fields
@@ -21,16 +29,16 @@ public class Course {
         this.id = String.format("C%03d",nextId++);
     }
 
-    @Override
-    public String toString() {
-        return "Course {" +
-                "Id='" + id + '\'' +
-                ", Course Name='" + courseName + '\'' +
-                ", Credit=" + credit +
-                ", Teacher=" + teacher +
-                ", Department=" + department +
-                ", Student Number=" + studentNum +
-                ", Students=" + Arrays.toString(students) +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Course {" +
+//                "Id='" + id + '\'' +
+//                ", Course Name='" + courseName + '\'' +
+//                ", Credit=" + credit +
+//                ", Teacher=" + teacher +
+//                ", Department=" + department +
+//                ", Student Number=" + studentNum +
+//                ", Students=" + Arrays.toString(students) +
+//                '}';
+//    }
 }
