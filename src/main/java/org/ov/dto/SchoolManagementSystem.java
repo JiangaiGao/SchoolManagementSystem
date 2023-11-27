@@ -66,6 +66,10 @@ public class SchoolManagementSystem {
 
     }
 
+    public void printCourses() {
+
+    }
+
     public void modifyCourseTeacher(String teacherId, String courseId) {
 
     }
