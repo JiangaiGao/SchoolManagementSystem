@@ -36,6 +36,61 @@ public class SchoolManagementSystem {
         }
     }
 
+    //All the empty methods
+    public Department findDepartment(String departmentId) {
+        return null;
+    }
+
+    public Student findStudent(String studentId) {
+        return null;
+    }
+
+    public Course findCourse(String courseId) {
+        return null;
+    }
+
+    public Teacher findTeacher(String teacherId) {
+        return null;
+    }
+
+    public void printTeachers() {
+
+    }
+
+    public void printStudents() {
+
+    }
+
+    public void printDepartments() {
+
+    }
+
+    public void modifyCourseTeacher(String teacherId, String courseId) {
+
+    }
+
+    public void addDepartment(String departmentName) {
+
+    }
+
+    //What's the third String :(
+    public void addCourse(String courseName, double credit, String x) {
+
+    }
+
+    public void addTeacher(String fName, String lName, String y) {
+
+    }
+
+    public void addStudent(String fName, String lName, String z) {
+
+    }
+
+    public void registerCourse(String studentId, String courseID) {
+
+    }
+
+
     @Override
     public String toString() {
         String studentsStr = "[";
