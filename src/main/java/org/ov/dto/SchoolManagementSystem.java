@@ -18,6 +18,7 @@ public class SchoolManagementSystem {
     private Teacher[] teachers;
     private Department[] departments;
 
+    //Constructor
     public SchoolManagementSystem() {
         this.students = new Student[200];
         //this.courses = courses;
