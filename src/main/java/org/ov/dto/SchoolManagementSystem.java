@@ -91,7 +91,7 @@ public class SchoolManagementSystem {
     }
 
     public void modifyCourseTeacher(String teacherId, String courseId) {
-        
+
     }
 
     public void addDepartment(String departmentName) {

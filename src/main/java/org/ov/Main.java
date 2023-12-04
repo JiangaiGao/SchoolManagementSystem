@@ -9,8 +9,27 @@ public class Main {
         Teacher te = new Teacher("l", "q", de);
         Student stu = new Student("a", "d", de);
         Course co = new Course("math", 3.0, de);
-        sms.addStudent(stu);
         //sms.add
+        sms.addStudent(stu);
+        sms.addCourse(co);
+        sms.addDepartment(de);
+        sms.addTeacher(te);
+
+        //sms.find
+        sms.findCourse();
+        sms.findDepartment();
+        sms.findStudent();
+        sms.findTeacher();
+
+        //sms.print
+        sms.printCourses();
+        sms.printDepartments();
+        sms.printStudents();
+        sms.printTeachers();
+
+        //sms.modification
+        sms.modifyCourseTeacher();
+        sms.registerCourse();
 
         System.out.println(sms);
         System.out.println(de);
