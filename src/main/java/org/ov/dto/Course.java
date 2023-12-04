@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 public class Course {
     //fields
-    private String id;
+    private String courseId;
     private String courseName;
     private double credit;
     private Teacher teacher;
@@ -26,7 +26,7 @@ public class Course {
         this.courseName = courseName;
         this.credit = credit;
         this.department = department;
-        this.id = String.format("C%03d",nextId++);
+        this.courseId = String.format("C%03d",nextId++);
         this.students = new Student[200];
     }
 
@@ -53,7 +53,7 @@ public class Course {
             }
         }
         return "Course {" +
-                "Id='" + id + '\'' +
+                "Id='" + courseId + '\'' +
                 ", Course Name='" + courseName + '\'' +
                 ", Credit=" + credit +
                 ", Teacher=" + teacher +

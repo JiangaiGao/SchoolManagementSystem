@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 
 public class Teacher {
-    private String id;
+    private String teacherId;
     private String firstName;
     private String lastName;
     private Department department;
@@ -20,13 +20,13 @@ public class Teacher {
         this.firstName = firstName;
         this.lastName = lastName;
         this.department = department;
-        this.id = String.format("T%03d",nextId++);
+        this.teacherId = String.format("T%03d",nextId++);
     }
 
     @Override
     public String toString() {
         return "Teacher {" +
-                "Id='" + id + '\'' +
+                "Id='" + teacherId + '\'' +
                 ", First Name='" + firstName + '\'' +
                 ", Last Name='" + lastName + '\'' +
                 ", Department=" + department +

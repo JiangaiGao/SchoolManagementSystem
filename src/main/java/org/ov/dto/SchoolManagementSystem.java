@@ -39,18 +39,38 @@ public class SchoolManagementSystem {
 
     //All the empty methods
     public Department findDepartment(String departmentId) {
+        for (Department department : departments) {
+            if (department.getDepartmentId().equals(departmentId)) {
+                return department;
+            }
+        }
         return null;
     }
 
     public Student findStudent(String studentId) {
+        for (Student student : students) {
+            if (student.getStudentId().equals(studentId)) {
+                return student;
+            }
+        }
         return null;
     }
 
     public Course findCourse(String courseId) {
+        for (Course course : courses) {
+            if (course.getCourseId().equals(courseId)) {
+                return course;
+            }
+        }
         return null;
     }
 
     public Teacher findTeacher(String teacherId) {
+        for (Teacher teacher : teachers) {
+            if (teacher.getTeacherId().equals(teacherId)) {
+                return teacher;
+            }
+        }
         return null;
     }
 
@@ -71,7 +91,7 @@ public class SchoolManagementSystem {
     }
 
     public void modifyCourseTeacher(String teacherId, String courseId) {
-
+        
     }
 
     public void addDepartment(String departmentName) {
@@ -92,7 +112,6 @@ public class SchoolManagementSystem {
     }
 
     public void registerCourse(String studentId, String courseID) {
-
     }
 
 

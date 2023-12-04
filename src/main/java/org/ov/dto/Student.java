@@ -11,7 +11,7 @@ import java.util.Arrays;
 @Setter
 
 public class Student {
-    private String id;
+    private String studentId;
     private String firstName;
     private String lastName;
     private Department department;
@@ -24,14 +24,14 @@ public class Student {
         this.firstName = firstName;
         this.lastName = lastName;
         this.department = department;
-        this.id = String.format("S%03d",nextId++);
+        this.studentId = String.format("S%03d",nextId++);
         this.courses = new Course[5];
     }
 
     @Override
     public String toString() {
         return "Student {" +
-                "Id='" + id + '\'' +
+                "Id='" + studentId + '\'' +
                 ", First Name='" + firstName + '\'' +
                 ", Last Name='" + lastName + '\'' +
                 ", Department=" + department +
