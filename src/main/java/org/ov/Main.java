@@ -16,10 +16,10 @@ public class Main {
         sms.addTeacher(te);
 
         //sms.find
-        sms.findCourse();
-        sms.findDepartment();
-        sms.findStudent();
-        sms.findTeacher();
+        sms.findCourse("C001");
+        sms.findDepartment("D001");
+        sms.findStudent("S001");
+        sms.findTeacher("T001");
 
         //sms.print
         sms.printCourses();
@@ -28,8 +28,8 @@ public class Main {
         sms.printTeachers();
 
         //sms.modification
-        sms.modifyCourseTeacher();
-        sms.registerCourse();
+        sms.modifyCourseTeacher("T001", "C001");
+        sms.registerCourse("S001", "C001");
 
         System.out.println(sms);
         System.out.println(de);
