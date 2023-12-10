@@ -9,6 +9,7 @@ import lombok.Setter;
 @Setter
 
 public class Teacher {
+    //Fields
     private String teacherId;
     private String firstName;
     private String lastName;
@@ -16,6 +17,7 @@ public class Teacher {
 
     private static int nextId = 1;
 
+    //Constructor
     public Teacher(String firstName, String lastName, Department department) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -23,6 +25,7 @@ public class Teacher {
         this.teacherId = String.format("T%03d",nextId++);
     }
 
+    //toString
     @Override
     public String toString() {
         return "Teacher {" +

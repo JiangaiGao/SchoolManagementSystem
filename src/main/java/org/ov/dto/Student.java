@@ -11,6 +11,7 @@ import java.util.Arrays;
 @Setter
 
 public class Student {
+    //Fields
     private String studentId;
     private String firstName;
     private String lastName;
@@ -20,6 +21,7 @@ public class Student {
 
     private static int nextId = 1;
 
+    //Constructor
     public Student(String firstName, String lastName, Department department) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -28,6 +30,7 @@ public class Student {
         this.courses = new Course[5];
     }
 
+    //toString
     @Override
     public String toString() {
         return "Student {" +

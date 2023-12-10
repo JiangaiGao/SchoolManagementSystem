@@ -25,9 +25,9 @@ public class SchoolManagementSystem {
     //Constructor
     public SchoolManagementSystem() {
         this.students = new Student[200];
-        //this.courses = courses;
-        //this.teachers = teachers;
-        //this.departments = departments;
+        this.courses = new Course[30];
+        this.teachers = new Teacher[20];
+        this.departments = new Department[5];
     }
 
     //All the empty methods
@@ -90,7 +90,7 @@ public class SchoolManagementSystem {
     public void addDepartment(String departmentName) {
     }
     public void addDepartment(Department department) {
-        if (teacherNum < 5) {
+        if (departmentNum < 5) {
             //add the department
             departments[departmentNum] = department;
         }
@@ -104,7 +104,7 @@ public class SchoolManagementSystem {
     public void addCourse(String courseName, double credit, String x) {
     }
     public void addCourse(Course course) {
-        if (studentNum < 30) {
+        if (courseNum < 30) {
             //add the course
             courses[courseNum] = course;
         }

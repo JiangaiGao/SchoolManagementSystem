@@ -11,7 +11,7 @@ import java.util.Arrays;
 @Setter
 
 public class Course {
-    //fields
+    //Fields
     private String courseId;
     private String courseName;
     private double credit;
@@ -22,6 +22,7 @@ public class Course {
 
     private static int nextId = 1;
 
+    //Constructor
     public Course(String courseName, double credit, Department department) {
         this.courseName = courseName;
         this.credit = credit;
@@ -44,6 +45,7 @@ public class Course {
         }
     }
 
+    //toString
     @Override
     public String toString() {
         String studentsStr = "[";
