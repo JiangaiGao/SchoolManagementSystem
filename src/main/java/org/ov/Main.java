@@ -4,22 +4,24 @@ import org.ov.dto.*;
 
 public class Main {
     public static void main(String[] args) {
+        //Create objects
         SchoolManagementSystem sms = new SchoolManagementSystem();
-        Department de = new Department("hi");
-        Teacher te = new Teacher("l", "q", de);
-        Student stu = new Student("a", "d", de);
-        Course co = new Course("math", 3.0, de);
+        Department department = new Department("hi");
+        Teacher teacher = new Teacher("l", "q", department);
+        Student student = new Student("a", "d", department);
+        Course course = new Course("math", 3.0, department);
+
         //sms.add
-        sms.addStudent(stu);
-        sms.addCourse(co);
-        sms.addDepartment(de);
-        sms.addTeacher(te);
+        sms.addStudent(student);
+        sms.addCourse(course);
+        sms.addDepartment(department);
+        sms.addTeacher(teacher);
 
         //sms.find
-        sms.findCourse("C001");
-        sms.findDepartment("D001");
-        sms.findStudent("S001");
-        sms.findTeacher("T001");
+        System.out.println("Find course: " + sms.findCourse("C001"));
+        System.out.println("Find department: " + sms.findDepartment("D001"));
+        System.out.println("Find student: " + sms.findStudent("S001"));
+        System.out.println("Find teacher: " + sms.findTeacher("T001"));
 
         //sms.print
         sms.printCourses();
@@ -32,9 +34,10 @@ public class Main {
         sms.registerCourse("S001", "C001");
 
         System.out.println(sms);
-        System.out.println(de);
-        System.out.println(te);
-        System.out.println(stu);
-        System.out.println(co);
+        System.out.println(department);
+        System.out.println(teacher);
+        System.out.println(student);
+        System.out.println(course);
+
     }
 }

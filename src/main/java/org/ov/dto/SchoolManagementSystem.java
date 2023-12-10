@@ -12,6 +12,7 @@ import java.util.Arrays;
 @Setter
 
 public class SchoolManagementSystem {
+    //Fields
     private int studentNum = 0;
     private int teacherNum = 0;
     private int courseNum = 0;
@@ -30,7 +31,7 @@ public class SchoolManagementSystem {
         this.departments = new Department[5];
     }
 
-    //All the empty methods
+    //Find
     public Department findDepartment(String departmentId) {
         for (Department department : departments) {
             if (department.getDepartmentId().equals(departmentId)) {
@@ -67,26 +68,60 @@ public class SchoolManagementSystem {
         return null;
     }
 
+    //Print
     public void printTeachers() {
-
+        for (Teacher teacher : teachers) {
+            if (teacher != null) {
+                System.out.println("Teacher ID: " + teacher.getTeacherId() + ", Name: " + teacher.getFirstName() + teacher.getLastName());
+            }
+        }
     }
 
     public void printStudents() {
-
+        for (Student student : students) {
+            if (student != null) {
+                System.out.println("Student ID: " + student.getStudentId() + ", Name: " + student.getFirstName() + student.getLastName());
+                if (student.getCourses() != null) {
+                    System.out.println("  Courses:");
+                    for (Course course : student.getCourses()) {
+                        System.out.println("    - " + course.getCourseName());
+                    }
+                }
+            }
+        }
     }
 
     public void printDepartments() {
-
+        for (Department department : departments) {
+            if (department != null) {
+                System.out.println("Department ID: " + department.getDepartmentId() + ", Name: " + department.getDepartmentName());
+            }
+        }
     }
 
     public void printCourses() {
-
+        for (Course course : courses) {
+            if (course != null) {
+                System.out.println("Course ID: " + course.getCourseId() + ", Name: " + course.getCourseName());
+                if (course.getTeacher() != null) {
+                    System.out.println("  Teacher: " + course.getTeacher().getFirstName() + course.getTeacher().getLastName());
+                }
+                if (course.getStudents() != null) {
+                    System.out.println("  Students:");
+                    for (Student student : course.getStudents()) {
+                        System.out.println("    - " + student.getFirstName() + student.getLastName());
+                    }
+                }
+            }
+        }
     }
 
+    //Modification
     public void modifyCourseTeacher(String teacherId, String courseId) {
 
     }
 
+    //Add
     public void addDepartment(String departmentName) {
     }
     public void addDepartment(Department department) {
