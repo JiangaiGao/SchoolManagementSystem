@@ -30,6 +30,27 @@ public class Student {
         this.courses = new Course[5];
     }
 
+    public void registerCourse(Course courseName) {
+        if (courseNum < 5 && !isCourseRegistered(String.valueOf(courseName))) {
+            courses[courseNum] = courseName;
+            courseNum++;
+            System.out.println("Student registered for course successfully.");
+        } else if (courseNum >= 5) {
+            System.out.println("Student has already registered the maximum number of courses.");
+        } else {
+            System.out.println("Student has already registered for this course.");
+        }
+    }
+
+    private boolean isCourseRegistered(String courseName) {
+        for (int i = 0; i < courseNum; i++) {
+            if (courses[i] != null && courses[i].equals(courseName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * A toString method that returns the Array Courses as '[]' when course is null.
      *
@@ -49,7 +70,7 @@ public class Student {
                 "Id='" + studentId + '\'' +
                 ", First Name='" + firstName + '\'' +
                 ", Last Name='" + lastName + '\'' +
-                ", Department=" + department +
+                ", " + department +
                 ", Course Number=" + courseNum +
                 ", Courses=" + coursesStr +
                 '}';

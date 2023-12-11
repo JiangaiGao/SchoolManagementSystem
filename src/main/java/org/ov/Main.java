@@ -37,7 +37,7 @@ public class Main {
 
         //sms.modification
         sms.modifyCourseTeacher("T001", "C001");
-        //sms.modifyCourseTeacher("T002", "C001");
+        sms.modifyCourseTeacher("T002", "C001");
         sms.modifyCourseTeacher("T002", "C002");
         sms.registerCourse("S001", "C001");
         sms.registerCourse("S002", "C001");

@@ -32,7 +32,7 @@ public class Teacher {
                 "Id='" + teacherId + '\'' +
                 ", First Name='" + firstName + '\'' +
                 ", Last Name='" + lastName + '\'' +
-                ", Department=" + department +
+                ", " + department +
                 '}';
     }
 }

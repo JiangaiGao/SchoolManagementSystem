@@ -3,6 +3,8 @@ package org.ov.dto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import java.util.List;
+import java.util.ArrayList;
 
 @EqualsAndHashCode
 @Getter
@@ -80,12 +82,6 @@ public class SchoolManagementSystem {
         for (Student student : students) {
             if (student != null) {
                 System.out.println(student);
-//                if (student.getCourses() != null) {
-//                    System.out.println("  Courses:");
-//                    for (Course course : student.getCourses()) {
-//                        System.out.println("    - " + course.getCourseName());
-//                    }
-//                }
             }
         }
     }
@@ -104,17 +100,6 @@ public class SchoolManagementSystem {
         for (Course course : courses) {
             if (course != null) {
                 System.out.println(course);
-                if (course.getTeacher() != null) {
-                    System.out.println("  Teacher: " + course.getTeacher().getFirstName() +
-                            course.getTeacher().getLastName());
-                }
-//                if (course.getStudents() != null) {
-//                    System.out.println("  Students:");
-//                    for (Student student : course.getStudents()) {
-//                        System.out.println("    - " + student.getFirstName() +
-//                                student.getLastName());
-//                    }
-//                }
             }
         }
     }
@@ -180,7 +165,7 @@ public class SchoolManagementSystem {
         if (teacher != null && course != null) {
             if (course.getTeacher() == null) {
                 course.setTeacher(teacher);
-                System.out.println("Course " + courseId + " is taught by teacher " + teacherId);
+                System.out.println(course + " teacher info updated successfully.");
             } else {
                 System.out.println("Course " + courseId + " is already taught by a teacher.");
             }
@@ -194,10 +179,29 @@ public class SchoolManagementSystem {
         Course course = findCourse(courseId);
 
         if (student != null && course != null) {
-            student.setCourses(courses);
-            System.out.println("Course " + courseId + " registered for student " + studentId);
+            if (course.getStudentNum() < 5) {
+                // Check if the student is not already registered for the course
+                boolean isAlreadyRegistered = false;
+                for (Student registeredStudent : course.getStudents()) {
+                    if (registeredStudent != null && registeredStudent.getStudentId().equals(studentId)) {
+                        isAlreadyRegistered = true;
+                        break;
+                    }
+                }
+
+                if (!isAlreadyRegistered) {
+                    student.registerCourse(course);
+                    course.registerStudent(student);
+                    System.out.println("Student registered for the course successfully.");
+                } else {
+                    System.out.println("Student is already registered for this course.");
+                }
+            } else {
+                System.out.println("The course is fully registered. Cannot register more students.");
+            }
         } else {
-            System.out.println("Student or course not found.");
+            System.out.println("Cannot find student with ID " + studentId +
+                    " or course with ID " + courseId + ". Register course for student failed.");
         }
     }
 

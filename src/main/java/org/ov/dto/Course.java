@@ -31,12 +31,33 @@ public class Course {
         this.students = new Student[5];
     }
 
-    /**
-     * A toString method that returns the Array Students as '[]' when student is null.
-     *
-     * @return Course with id, name, credit, teacher, department, student number and students.
-     * @author jiangaiGao
-     */
+    public void registerStudent(Student student) {
+        if (studentNum < 5) {
+            boolean isAlreadyRegistered = false;
+            for (int i = 0; i < studentNum; i++) {
+                if (students[i] != null && students[i].equals(student)) {
+                    isAlreadyRegistered = true;
+                    break;
+                }
+            }
+            if (!isAlreadyRegistered) {
+                students[studentNum] = student;
+                studentNum++;
+                System.out.println("Student registered for the course successfully.");
+            } else {
+                System.out.println("Student is already registered for this course.");
+            }
+        } else {
+            System.out.println("The course is fully registered. Cannot register more students.");
+        }
+    }
+
+        /**
+         * A toString method that returns the Array Students as '[]' when student is null.
+         *
+         * @return Course with id, name, credit, teacher, department, student number and students.
+         * @author jiangaiGao
+         */
     @Override
     public String toString() {
         String studentsStr = "[";
@@ -51,8 +72,8 @@ public class Course {
                 "courseId='" + courseId + '\'' +
                 ", courseName='" + courseName + '\'' +
                 ", credit=" + credit +
-                ", teacher=" + teacher +
-                ", department=" + department +
+                ", " + teacher +
+                ", " + department +
                 ", studentNum=" + studentNum +
                 ", students=" + studentsStr +
                 '}';
