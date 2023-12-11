@@ -67,6 +67,7 @@ public class SchoolManagementSystem {
 
     //Print
     public void printTeachers() {
+        System.out.println("Displaying all teachers:\n----------");
         for (Teacher teacher : teachers) {
             if (teacher != null) {
                 System.out.println("Teacher ID: " + teacher.getTeacherId() +
@@ -76,6 +77,7 @@ public class SchoolManagementSystem {
     }
 
     public void printStudents() {
+        System.out.println("Displaying all students:\n----------");
         for (Student student : students) {
             if (student != null) {
                 System.out.println("Student ID: " + student.getStudentId() +
@@ -91,6 +93,7 @@ public class SchoolManagementSystem {
     }
 
     public void printDepartments() {
+        System.out.println("Displaying all departments:\n----------");
         for (Department department : departments) {
             if (department != null) {
                 System.out.println("Department ID: " + department.getDepartmentId() +
@@ -100,6 +103,7 @@ public class SchoolManagementSystem {
     }
 
     public void printCourses() {
+        System.out.println("Displaying all courses:\n----------");
         for (Course course : courses) {
             if (course != null) {
                 System.out.println("Course ID: " + course.getCourseId() +
@@ -131,7 +135,7 @@ public class SchoolManagementSystem {
         }
         else {
             //reach the cap
-            System.out.println("There are 5 departments already");
+            System.out.println("Max department reached, add a new department failed.");
         }
     }
 
@@ -147,7 +151,7 @@ public class SchoolManagementSystem {
         }
         else {
             //reach the cap
-            System.out.printf("There are %d courses already", 30);
+            System.out.println("Max course reached, add a new course failed.");
         }
     }
 
@@ -162,7 +166,7 @@ public class SchoolManagementSystem {
         }
         else {
             //reach the cap
-            System.out.printf("There are %d teachers already", 20);
+            System.out.println("Max teacher reached, add a new teacher failed.");
         }
     }
 
@@ -177,7 +181,7 @@ public class SchoolManagementSystem {
         }
         else {
             //reach the cap
-            System.out.printf("There are %d students already", 200);
+            System.out.println("Max student reached, add a new student failed.");
         }
     }
 
