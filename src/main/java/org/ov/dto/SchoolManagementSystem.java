@@ -5,9 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.List;
-import java.util.ArrayList;
-
 @EqualsAndHashCode
 @Getter
 @Setter
@@ -107,6 +104,7 @@ public class SchoolManagementSystem {
                 System.out.println(teacher);
             }
         }
+        System.out.println();   //clean up
     }
 
     /**
@@ -119,6 +117,7 @@ public class SchoolManagementSystem {
                 System.out.println(student);
             }
         }
+        System.out.println();   //clean up
     }
 
     /**
@@ -131,6 +130,7 @@ public class SchoolManagementSystem {
                 System.out.println(department);
             }
         }
+        System.out.println();   //clean up
     }
 
     /**
@@ -143,18 +143,18 @@ public class SchoolManagementSystem {
                 System.out.println(course);
             }
         }
+        System.out.println();   //clean up
     }
 
     /**
      * Add a department in the school management system, max 5.
-     * @param department
+     * @param departmentName
      */
-    public void addDepartment(Department department) {
+    public void addDepartment(String departmentName) {
         if (departmentNum < 5) {
-            //add the department
-            departments[departmentNum] = department;
+            departments[departmentNum] = new Department(departmentName);
             departmentNum++;
-            System.out.println("Add department " + department + " successfully.");
+            System.out.println("Add department " + departmentName + " successfully.");
         }
         else {
             //reach the cap
@@ -164,14 +164,16 @@ public class SchoolManagementSystem {
 
     /**
      * Add a course in the school management system, max 30.
-     * @param course
+     * @param courseName
+     * @param credit
+     * @param department
      */
-    public void addCourse(Course course) {
+    public void addCourse(String courseName, double credit, Department department) {
         if (courseNum < 30) {
             //add the course
-            courses[courseNum] = course;
+            courses[courseNum] = new Course(courseName, credit, department);
             courseNum++;
-            System.out.println("Add course " + course + " successfully.");
+            System.out.println("Add course " + courseName + " successfully.");
         }
         else {
             //reach the cap
@@ -181,14 +183,16 @@ public class SchoolManagementSystem {
 
     /**
      * Add a teacher in the school management system, max 20.
-     * @param teacher
+     * @param firstName
+     * @param lastName
+     * @param department
      */
-    public void addTeacher(Teacher teacher) {
+    public void addTeacher(String firstName, String lastName, Department department) {
         if (teacherNum < 20) {
             //add the teacher
-            teachers[teacherNum] = teacher;
+            teachers[teacherNum] = new Teacher(firstName, lastName, department);
             teacherNum++;
-            System.out.println("Add teacher " + teacher + " successfully.");
+            System.out.println("Add teacher " + firstName + " " + lastName + " successfully.");
         }
         else {
             //reach the cap
@@ -198,14 +202,16 @@ public class SchoolManagementSystem {
 
     /**
      * Add a student in the school management system, max 200.
-     * @param student
+     * @param firstName
+     * @param lastName
+     * @param department
      */
-    public void addStudent(Student student) {
+    public void addStudent(String firstName, String lastName, Department department) {
         if (studentNum < 200) {
             //add the student
-            students[studentNum] = student;
+            students[studentNum] = new Student(firstName, lastName, department);
             studentNum++;
-            System.out.println("Add student " + student + " successfully.");
+            System.out.println("Add student " + firstName + " " + lastName + " successfully.");
         }
         else {
             //reach the cap
@@ -238,7 +244,7 @@ public class SchoolManagementSystem {
 
     /**
      * sign up a student in a course,
-     * if student's already registered, print a message.
+     * if student's already registered to 5 courses, print a message.
      * if the course is full, print a message.
      * if the input ids are wrong, print a message.
      * @param studentId
@@ -256,12 +262,12 @@ public class SchoolManagementSystem {
                         "Latest student info: " + student +
                         "\nLatest course info: " + course);
             } else if (course.getStudentNum() >= 5) {
-                System.out.println("Course fully registered. Cannot register more students.");
+                System.out.println("Max student reached, add a new student failed..");
             } else {
-                System.out.println("Student has already registered the maximum number of courses.");
+                System.out.println("Max course reached, add a new course failed.");
             }
         } else {
-            System.out.println("Student or course not found with IDs. Register failed.");
+            System.out.println("Student or course not found with id. Register failed.");
         }
     }
 }
