@@ -127,10 +127,11 @@ public class SchoolManagementSystem {
             //add the department
             departments[departmentNum] = department;
             departmentNum++;
+            System.out.printf("Add department %s successfully.\n", department);
         }
         else {
             //reach the cap
-            System.out.printf("There are %d departments already", 5);
+            System.out.println("There are 5 departments already");
         }
     }
 
@@ -142,6 +143,7 @@ public class SchoolManagementSystem {
             //add the course
             courses[courseNum] = course;
             courseNum++;
+            System.out.printf("Add course %s successfully.\n", course);
         }
         else {
             //reach the cap
@@ -156,6 +158,7 @@ public class SchoolManagementSystem {
             //add the teacher
             teachers[teacherNum] = teacher;
             teacherNum++;
+            System.out.printf("Add teacher %s successfully.\n", teacher);
         }
         else {
             //reach the cap
@@ -170,6 +173,7 @@ public class SchoolManagementSystem {
             //add the student
             students[studentNum] = student;
             studentNum++;
+            System.out.printf("Add student %s successfully.\n", student);
         }
         else {
             //reach the cap
@@ -183,8 +187,12 @@ public class SchoolManagementSystem {
         Course course = findCourse(courseId);
 
         if (teacher != null && course != null) {
-            course.setTeacher(teacher);
-            System.out.println("Teacher " + teacherId + " assigned to course " + courseId);
+            if (course.getTeacher() == null) {
+                course.setTeacher(teacher);
+                System.out.println("Course " + courseId + " is taught by teacher " + teacherId);
+            } else {
+                System.out.println("Course " + courseId + " is already taught by a teacher.");
+            }
         } else {
             System.out.println("Teacher or course not found.");
         }

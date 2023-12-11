@@ -28,18 +28,7 @@ public class Course {
         this.credit = credit;
         this.department = department;
         this.courseId = String.format("C%03d",nextId++);
-        this.students = new Student[200];
-    }
-
-    public void addStudent(Student student) {
-        for (int i = 0; i < 200; i++) {
-            if (students[i] == null) {
-                students[i] = student;
-            }
-            else {
-                System.out.printf("There are %d students already", 200);
-            }
-        }
+        this.students = new Student[5];
     }
 
     //toString

@@ -8,6 +8,10 @@ public class Main {
         SchoolManagementSystem sms = new SchoolManagementSystem();
         Department department1 = new Department("Computer Science");
         Department department2 = new Department("Science");
+        Department department3 = new Department("Science");
+        Department department4 = new Department("Science");
+        Department department5 = new Department("Science");
+        Department department6 = new Department("Science");
         Teacher teacher1 = new Teacher("Yi", "Wang", department1);
         Teacher teacher2 = new Teacher("George", "Gao", department2);
         Student student1 = new Student("Olivia", "Gao", department1);
@@ -24,11 +28,12 @@ public class Main {
         sms.addCourse(course2);
         sms.addDepartment(department1);
         sms.addDepartment(department2);
+        sms.addDepartment(department3);
+        sms.addDepartment(department4);
+        sms.addDepartment(department5);
+        //sms.addDepartment(department6);   //More than 5 departments
         sms.addTeacher(teacher1);
         sms.addTeacher(teacher2);
-        course1.addStudent(student1);
-        course1.addStudent(student2);
-        course2.addStudent(student3);
 
         //sms.find
         System.out.println(sms.findCourse("C001"));
@@ -38,10 +43,8 @@ public class Main {
         System.out.println(sms.findStudent("S001"));
         System.out.println(sms.findStudent("S002"));
         System.out.println(sms.findStudent("S003"));
-        System.out.println(sms.findStudent("S004"));
         System.out.println(sms.findTeacher("T001"));
         System.out.println(sms.findTeacher("T002"));
-        System.out.println(sms.findTeacher("T003"));
 
         //sms.print
         sms.printCourses();
@@ -51,15 +54,10 @@ public class Main {
 
         //sms.modification
         sms.modifyCourseTeacher("T001", "C001");
-        //sms.registerCourse("S001", "C001");
-
-        System.out.println(teacher2);
-        System.out.println(teacher1);
-//        System.out.println(sms);
-//        System.out.println(department);
-//        System.out.println(teacher);
-//        System.out.println(student);
-//        System.out.println(course);
-
+        //sms.modifyCourseTeacher("T002", "C001");
+        sms.modifyCourseTeacher("T002", "C002");
+        sms.registerCourse("S001", "C001");
+        sms.registerCourse("S002", "C001");
+        sms.registerCourse("S003", "C002");
     }
 }
