@@ -4,9 +4,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.sql.SQLOutput;
-import java.util.Arrays;
-
 @EqualsAndHashCode
 @Getter
 @Setter
@@ -34,7 +31,7 @@ public class SchoolManagementSystem {
     //Find
     public Department findDepartment(String departmentId) {
         for (Department department : departments) {
-            if (department.getDepartmentId().equals(departmentId)) {
+            if (department != null && department.getDepartmentId().equals(departmentId)) {
                 return department;
             }
         }
@@ -43,7 +40,7 @@ public class SchoolManagementSystem {
 
     public Student findStudent(String studentId) {
         for (Student student : students) {
-            if (student.getStudentId().equals(studentId)) {
+            if (student != null && student.getStudentId().equals(studentId)) {
                 return student;
             }
         }
@@ -52,7 +49,7 @@ public class SchoolManagementSystem {
 
     public Course findCourse(String courseId) {
         for (Course course : courses) {
-            if (course.getCourseId().equals(courseId)) {
+            if (course != null && course.getCourseId().equals(courseId)) {
                 return course;
             }
         }
@@ -61,7 +58,7 @@ public class SchoolManagementSystem {
 
     public Teacher findTeacher(String teacherId) {
         for (Teacher teacher : teachers) {
-            if (teacher.getTeacherId().equals(teacherId)) {
+            if (teacher != null && teacher.getTeacherId().equals(teacherId)) {
                 return teacher;
             }
         }
@@ -72,7 +69,8 @@ public class SchoolManagementSystem {
     public void printTeachers() {
         for (Teacher teacher : teachers) {
             if (teacher != null) {
-                System.out.println("Teacher ID: " + teacher.getTeacherId() + ", Name: " + teacher.getFirstName() + teacher.getLastName());
+                System.out.println("Teacher ID: " + teacher.getTeacherId() +
+                        ", Name: " + teacher.getFirstName() + " " + teacher.getLastName());
             }
         }
     }
@@ -80,13 +78,14 @@ public class SchoolManagementSystem {
     public void printStudents() {
         for (Student student : students) {
             if (student != null) {
-                System.out.println("Student ID: " + student.getStudentId() + ", Name: " + student.getFirstName() + student.getLastName());
-                if (student.getCourses() != null) {
-                    System.out.println("  Courses:");
-                    for (Course course : student.getCourses()) {
-                        System.out.println("    - " + course.getCourseName());
-                    }
-                }
+                System.out.println("Student ID: " + student.getStudentId() +
+                        ", Name: " + student.getFirstName() + " " + student.getLastName());
+                //if (student.getCourses() != null) {
+                    //System.out.println("  Courses:");
+                    //for (Course course : student.getCourses()) {
+                        //System.out.println("    - " + course.getCourseName());
+                    //}
+                //}
             }
         }
     }
@@ -94,7 +93,8 @@ public class SchoolManagementSystem {
     public void printDepartments() {
         for (Department department : departments) {
             if (department != null) {
-                System.out.println("Department ID: " + department.getDepartmentId() + ", Name: " + department.getDepartmentName());
+                System.out.println("Department ID: " + department.getDepartmentId() +
+                        ", Name: " + department.getDepartmentName());
             }
         }
     }
@@ -102,23 +102,21 @@ public class SchoolManagementSystem {
     public void printCourses() {
         for (Course course : courses) {
             if (course != null) {
-                System.out.println("Course ID: " + course.getCourseId() + ", Name: " + course.getCourseName());
+                System.out.println("Course ID: " + course.getCourseId() +
+                        ", Name: " + course.getCourseName());
                 if (course.getTeacher() != null) {
-                    System.out.println("  Teacher: " + course.getTeacher().getFirstName() + course.getTeacher().getLastName());
+                    System.out.println("  Teacher: " + course.getTeacher().getFirstName() +
+                            course.getTeacher().getLastName());
                 }
-                if (course.getStudents() != null) {
-                    System.out.println("  Students:");
-                    for (Student student : course.getStudents()) {
-                        System.out.println("    - " + student.getFirstName() + student.getLastName());
-                    }
-                }
+//                if (course.getStudents() != null) {
+//                    System.out.println("  Students:");
+//                    for (Student student : course.getStudents()) {
+//                        System.out.println("    - " + student.getFirstName() +
+//                                student.getLastName());
+//                    }
+//                }
             }
         }
-    }
-
-    //Modification
-    public void modifyCourseTeacher(String teacherId, String courseId) {
-
     }
 
     //Add
@@ -128,6 +126,7 @@ public class SchoolManagementSystem {
         if (departmentNum < 5) {
             //add the department
             departments[departmentNum] = department;
+            departmentNum++;
         }
         else {
             //reach the cap
@@ -142,6 +141,7 @@ public class SchoolManagementSystem {
         if (courseNum < 30) {
             //add the course
             courses[courseNum] = course;
+            courseNum++;
         }
         else {
             //reach the cap
@@ -155,6 +155,7 @@ public class SchoolManagementSystem {
         if (teacherNum < 20) {
             //add the teacher
             teachers[teacherNum] = teacher;
+            teacherNum++;
         }
         else {
             //reach the cap
@@ -168,6 +169,7 @@ public class SchoolManagementSystem {
         if (studentNum < 200) {
             //add the student
             students[studentNum] = student;
+            studentNum++;
         }
         else {
             //reach the cap
@@ -175,9 +177,30 @@ public class SchoolManagementSystem {
         }
     }
 
-    public void registerCourse(String studentId, String courseID) {
+    //Modification
+    public void modifyCourseTeacher(String teacherId, String courseId) {
+        Teacher teacher = findTeacher(teacherId);
+        Course course = findCourse(courseId);
+
+        if (teacher != null && course != null) {
+            course.setTeacher(teacher);
+            System.out.println("Teacher " + teacherId + " assigned to course " + courseId);
+        } else {
+            System.out.println("Teacher or course not found.");
+        }
     }
 
+    public void registerCourse(String studentId, String courseId) {
+        Student student = findStudent(studentId);
+        Course course = findCourse(courseId);
+
+        if (student != null && course != null) {
+            student.setCourses(courses);
+            System.out.println("Course " + courseId + " registered for student " + studentId);
+        } else {
+            System.out.println("Student or course not found.");
+        }
+    }
 
     @Override
     public String toString() {

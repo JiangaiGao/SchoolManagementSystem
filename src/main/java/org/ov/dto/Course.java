@@ -32,16 +32,13 @@ public class Course {
     }
 
     public void addStudent(Student student) {
-        if (students[0] == null) {
-            //add the student
-            students[0] = student;
-        }
-        else if (students[1] == null) {
-            //reach the cap
-            students[1] = student;
-        }
-        else {
-            System.out.printf("There are %d students already", 200);
+        for (int i = 0; i < 200; i++) {
+            if (students[i] == null) {
+                students[i] = student;
+            }
+            else {
+                System.out.printf("There are %d students already", 200);
+            }
         }
     }
 
