@@ -249,25 +249,16 @@ public class SchoolManagementSystem {
         Course course = findCourse(courseId);
 
         if (student != null && course != null) {
-            if (course.getStudentNum() < 5) {
-                boolean isAlreadyRegistered = false;
-                for (Student registeredStudent : course.getStudents()) {
-                    if (registeredStudent != null && registeredStudent.getStudentId().equals(studentId)) {
-                        isAlreadyRegistered = true;
-                        break;
-                    }
-                }
-                if (!isAlreadyRegistered) {
-                    student.registerCourse(course);
-                    course.registerStudent(student);
-                    System.out.println("Student register course successfully.\n" +
-                            "Latest student info: " + student +
-                            "\nLatest course info: " + course);
-                } else {
-                    System.out.println("Student is already registered for this course.");
-                }
-            } else {
+            if (course.getStudentNum() < 5 && student.getCourseNum() < 5) {
+                course.registerStudent(student);
+                student.registerCourse(course);
+                System.out.println("Student registered for the course successfully.\n" +
+                        "Latest student info: " + student +
+                        "\nLatest course info: " + course);
+            } else if (course.getStudentNum() >= 5) {
                 System.out.println("Course fully registered. Cannot register more students.");
+            } else {
+                System.out.println("Student has already registered the maximum number of courses.");
             }
         } else {
             System.out.println("Student or course not found with IDs. Register failed.");
