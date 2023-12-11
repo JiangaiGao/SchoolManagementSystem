@@ -192,7 +192,9 @@ public class SchoolManagementSystem {
                 if (!isAlreadyRegistered) {
                     student.registerCourse(course);
                     course.registerStudent(student);
-                    System.out.println("Student registered for the course successfully.");
+                    System.out.println("Student register course successfully.\n" +
+                            "Latest student info: " + student +
+                            "Latest course info: " + course);
                 } else {
                     System.out.println("Student is already registered for this course.");
                 }

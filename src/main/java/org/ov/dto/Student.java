@@ -34,7 +34,7 @@ public class Student {
         if (courseNum < 5 && !isCourseRegistered(String.valueOf(courseName))) {
             courses[courseNum] = courseName;
             courseNum++;
-            System.out.println("Student registered for course successfully.");
+            System.out.println("Student register course successfully.");
         } else if (courseNum >= 5) {
             System.out.println("Student has already registered the maximum number of courses.");
         } else {

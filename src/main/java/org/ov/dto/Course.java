@@ -43,7 +43,8 @@ public class Course {
             if (!isAlreadyRegistered) {
                 students[studentNum] = student;
                 studentNum++;
-                System.out.println("Student registered for the course successfully.");
+                System.out.println("Student register course successfully.\n" +
+                        "Latest student info: " + student);
             } else {
                 System.out.println("Student is already registered for this course.");
             }
