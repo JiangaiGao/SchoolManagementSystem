@@ -254,7 +254,6 @@ public class SchoolManagementSystem {
                         break;
                     }
                 }
-
                 if (!isAlreadyRegistered) {
                     student.registerCourse(course);
                     course.registerStudent(student);
@@ -268,8 +267,7 @@ public class SchoolManagementSystem {
                 System.out.println("The course is fully registered. Cannot register more students.");
             }
         } else {
-            System.out.println("Cannot find student with ID " + studentId +
-                    " or course with ID " + courseId + ". Register course for student failed.");
+            System.out.println("Cannot find student or course with IDs. Register failed.");
         }
     }
 
