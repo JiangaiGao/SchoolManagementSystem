@@ -31,7 +31,12 @@ public class Course {
         this.students = new Student[5];
     }
 
-    //toString
+    /**
+     * A toString method that returns the Array Students as '[]' when student is null.
+     *
+     * @return Course with id, name, credit, teacher, department, student number and students.
+     * @author jiangaiGao
+     */
     @Override
     public String toString() {
         String studentsStr = "[";

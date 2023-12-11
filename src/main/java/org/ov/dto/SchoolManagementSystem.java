@@ -120,8 +120,6 @@ public class SchoolManagementSystem {
     }
 
     //Add
-    public void addDepartment(String departmentName) {
-    }
     public void addDepartment(Department department) {
         if (departmentNum < 5) {
             //add the department
@@ -135,9 +133,6 @@ public class SchoolManagementSystem {
         }
     }
 
-    //What's the third String :(
-    public void addCourse(String courseName, double credit, String x) {
-    }
     public void addCourse(Course course) {
         if (courseNum < 30) {
             //add the course
@@ -151,8 +146,6 @@ public class SchoolManagementSystem {
         }
     }
 
-    public void addTeacher(String fName, String lName, String y) {
-    }
     public void addTeacher(Teacher teacher) {
         if (teacherNum < 20) {
             //add the teacher
@@ -166,8 +159,6 @@ public class SchoolManagementSystem {
         }
     }
 
-    public void addStudent(String fName, String lName, String z) {
-    }
     public void addStudent(Student student) {
         if (studentNum < 200) {
             //add the student
