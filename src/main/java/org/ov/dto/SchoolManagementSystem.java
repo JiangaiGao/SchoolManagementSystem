@@ -259,7 +259,7 @@ public class SchoolManagementSystem {
                     course.registerStudent(student);
                     System.out.println("Student register course successfully.\n" +
                             "Latest student info: " + student +
-                            "Latest course info: " + course);
+                            "\nLatest course info: " + course);
                 } else {
                     System.out.println("Student is already registered for this course.");
                 }
