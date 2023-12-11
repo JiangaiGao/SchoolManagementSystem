@@ -1,5 +1,8 @@
 # SchoolManagementSystem
 Author: Jiangai Gao
+
+For unknown reasons i cant put courses to string or the code crash... i give up sorry teacher i suck <:(
+
 Project creates a school management system with basic functionalities, like register personals, find objects with Ids, etc.
 includes different classes such as:
 SchoolManagementSystem: includes all methods(findDepartment; addDepartment; printDepartments; findStudent; addStudent; printStudents; findTeacher; addTeacher; printTeachers; findCourse; addcourse; printCourse), manages different classes:
