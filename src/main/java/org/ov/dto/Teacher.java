@@ -3,12 +3,10 @@ package org.ov.dto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 @EqualsAndHashCode
 @Getter
 @Setter
-@ToString
 
 public class Teacher {
     //Fields
@@ -25,5 +23,16 @@ public class Teacher {
         this.lastName = lastName;
         this.department = department;
         this.teacherId = String.format("T%03d",nextId++);
+    }
+
+    //toString
+    @Override
+    public String toString() {
+        return "Teacher {" +
+                "Id='" + teacherId + '\'' +
+                ", First Name='" + firstName + '\'' +
+                ", Last Name='" + lastName + '\'' +
+                ", Department=" + department +
+                '}';
     }
 }

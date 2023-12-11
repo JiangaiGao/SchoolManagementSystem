@@ -37,17 +37,19 @@ public class Course {
         String studentsStr = "[";
         for (Student student : students) {
             if (student != null) {
-                studentsStr += "]";
+                studentsStr += student + ", ";
             }
         }
-        return "Course {" +
-                "Id='" + courseId + '\'' +
-                ", Course Name='" + courseName + '\'' +
-                ", Credit=" + credit +
-                ", Teacher=" + teacher +
-                ", Department=" + department +
-                ", Student Number=" + studentNum +
-                ", Students=" + studentsStr +
+        studentsStr += "]";
+
+        return "Course{" +
+                "courseId='" + courseId + '\'' +
+                ", courseName='" + courseName + '\'' +
+                ", credit=" + credit +
+                ", teacher=" + teacher +
+                ", department=" + department +
+                ", studentNum=" + studentNum +
+                ", students=" + studentsStr +
                 '}';
     }
 }

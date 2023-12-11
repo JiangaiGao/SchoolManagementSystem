@@ -3,14 +3,12 @@ package org.ov.dto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.util.Arrays;
 
 @EqualsAndHashCode
 @Getter
 @Setter
-@ToString
 
 public class Student {
     //Fields
@@ -30,5 +28,18 @@ public class Student {
         this.department = department;
         this.studentId = String.format("S%03d",nextId++);
         this.courses = new Course[5];
+    }
+
+    //toString
+    @Override
+    public String toString() {
+        return "Student {" +
+                "Id='" + studentId + '\'' +
+                ", First Name='" + firstName + '\'' +
+                ", Last Name='" + lastName + '\'' +
+                ", Department=" + department +
+                ", Course Number=" + courseNum +
+                ", Courses=" + Arrays.toString(courses) +
+                '}';
     }
 }
