@@ -30,6 +30,12 @@ public class Student {
         this.courses = new Course[5];
     }
 
+    /**
+     * Register a course to the student
+     * @param courseName
+     *
+     * @author jiangaiGao
+     */
     public void registerCourse(Course courseName) {
         if (courseNum < 5 && !isCourseRegistered(String.valueOf(courseName))) {
             courses[courseNum] = courseName;
@@ -42,6 +48,13 @@ public class Student {
         }
     }
 
+    /**
+     * tells if a course is registered
+     *
+     * @param courseName
+     * @return if the course is registered
+     * @author jiangaiGao
+     */
     private boolean isCourseRegistered(String courseName) {
         for (int i = 0; i < courseNum; i++) {
             if (courses[i] != null && courses[i].equals(courseName)) {
