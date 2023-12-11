@@ -31,26 +31,9 @@ public class Main {
         sms.addDepartment(department3);
         sms.addDepartment(department4);
         sms.addDepartment(department5);
-        //sms.addDepartment(department6);   //More than 5 departments
+        sms.addDepartment(department6);   //Max department reached.
         sms.addTeacher(teacher1);
         sms.addTeacher(teacher2);
-
-        //sms.find
-        System.out.println(sms.findCourse("C001"));
-        System.out.println(sms.findCourse("C002"));
-        System.out.println(sms.findDepartment("D001"));
-        System.out.println(sms.findDepartment("D002"));
-        System.out.println(sms.findStudent("S001"));
-        System.out.println(sms.findStudent("S002"));
-        System.out.println(sms.findStudent("S003"));
-        System.out.println(sms.findTeacher("T001"));
-        System.out.println(sms.findTeacher("T002"));
-
-        //sms.print
-        sms.printCourses();
-        sms.printDepartments();
-        sms.printStudents();
-        sms.printTeachers();
 
         //sms.modification
         sms.modifyCourseTeacher("T001", "C001");
@@ -59,5 +42,18 @@ public class Main {
         sms.registerCourse("S001", "C001");
         sms.registerCourse("S002", "C001");
         sms.registerCourse("S003", "C002");
+
+        //sms.find
+        System.out.println(sms.findCourse("C001"));
+        System.out.println(sms.findDepartment("D001"));
+        System.out.println(sms.findStudent("S001"));
+        System.out.println(sms.findTeacher("T001"));
+        System.out.println(sms.findTeacher("T005"));   //Teacher not found.
+
+        //sms.print
+        sms.printCourses();
+        sms.printDepartments();
+        sms.printStudents();
+        sms.printTeachers();
     }
 }

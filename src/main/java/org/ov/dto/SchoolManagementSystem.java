@@ -70,8 +70,7 @@ public class SchoolManagementSystem {
         System.out.println("Displaying all teachers:\n----------");
         for (Teacher teacher : teachers) {
             if (teacher != null) {
-                System.out.println("Teacher ID: " + teacher.getTeacherId() +
-                        ", Name: " + teacher.getFirstName() + " " + teacher.getLastName());
+                System.out.println(teacher);
             }
         }
     }
@@ -80,14 +79,13 @@ public class SchoolManagementSystem {
         System.out.println("Displaying all students:\n----------");
         for (Student student : students) {
             if (student != null) {
-                System.out.println("Student ID: " + student.getStudentId() +
-                        ", Name: " + student.getFirstName() + " " + student.getLastName());
-                //if (student.getCourses() != null) {
-                    //System.out.println("  Courses:");
-                    //for (Course course : student.getCourses()) {
-                        //System.out.println("    - " + course.getCourseName());
-                    //}
-                //}
+                System.out.println(student);
+//                if (student.getCourses() != null) {
+//                    System.out.println("  Courses:");
+//                    for (Course course : student.getCourses()) {
+//                        System.out.println("    - " + course.getCourseName());
+//                    }
+//                }
             }
         }
     }
@@ -96,8 +94,7 @@ public class SchoolManagementSystem {
         System.out.println("Displaying all departments:\n----------");
         for (Department department : departments) {
             if (department != null) {
-                System.out.println("Department ID: " + department.getDepartmentId() +
-                        ", Name: " + department.getDepartmentName());
+                System.out.println(department);
             }
         }
     }
@@ -106,8 +103,7 @@ public class SchoolManagementSystem {
         System.out.println("Displaying all courses:\n----------");
         for (Course course : courses) {
             if (course != null) {
-                System.out.println("Course ID: " + course.getCourseId() +
-                        ", Name: " + course.getCourseName());
+                System.out.println(course);
                 if (course.getTeacher() != null) {
                     System.out.println("  Teacher: " + course.getTeacher().getFirstName() +
                             course.getTeacher().getLastName());
@@ -131,7 +127,7 @@ public class SchoolManagementSystem {
             //add the department
             departments[departmentNum] = department;
             departmentNum++;
-            System.out.printf("Add department %s successfully.\n", department);
+            System.out.println("Add department " + department + " successfully.");
         }
         else {
             //reach the cap
@@ -147,7 +143,7 @@ public class SchoolManagementSystem {
             //add the course
             courses[courseNum] = course;
             courseNum++;
-            System.out.printf("Add course %s successfully.\n", course);
+            System.out.println("Add course " + course + " successfully.");
         }
         else {
             //reach the cap
@@ -162,7 +158,7 @@ public class SchoolManagementSystem {
             //add the teacher
             teachers[teacherNum] = teacher;
             teacherNum++;
-            System.out.printf("Add teacher %s successfully.\n", teacher);
+            System.out.println("Add teacher " + teacher + " successfully.");
         }
         else {
             //reach the cap
@@ -177,7 +173,7 @@ public class SchoolManagementSystem {
             //add the student
             students[studentNum] = student;
             studentNum++;
-            System.out.printf("Add student %s successfully.\n", student);
+            System.out.println("Add student " + student + " successfully.");
         }
         else {
             //reach the cap
