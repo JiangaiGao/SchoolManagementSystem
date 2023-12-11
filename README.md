@@ -1,11 +1,12 @@
 # SchoolManagementSystem
-Creates a school management system with basic functionalities, like register personals, find objects with Ids, etc.
+Author: Jiangai Gao
+Project creates a school management system with basic functionalities, like register personals, find objects with Ids, etc.
 includes different classes such as:
-SchoolManagementSystem;
-Student;
-Course;
-Teacher;
-Department;
+SchoolManagementSystem: includes all methods(findDepartment; addDepartment; printDepartments; findStudent; addStudent; printStudents; findTeacher; addTeacher; printTeachers; findCourse; addcourse; printCourse), manages different classes:
+Student: represents students in a school, with names, Ids, registered courses, department
+Course: represents classes in a school, with names, Ids, credits, assigned teacher, registered students and department
+Teacher: represents teachers in a school, with names, Ids, assigned courses, department
+Department: represents departments in a school, with names and Ids.
 
 A SchoolManagementSystem that:
 1. Contains different departments (max 5), each department has an id that increases each time.
