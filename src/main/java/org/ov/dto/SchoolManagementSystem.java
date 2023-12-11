@@ -3,12 +3,15 @@ package org.ov.dto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
+
 import java.util.List;
 import java.util.ArrayList;
 
 @EqualsAndHashCode
 @Getter
 @Setter
+@ToString
 
 public class SchoolManagementSystem {
     //Fields
@@ -264,27 +267,10 @@ public class SchoolManagementSystem {
                     System.out.println("Student is already registered for this course.");
                 }
             } else {
-                System.out.println("The course is fully registered. Cannot register more students.");
+                System.out.println("Course fully registered. Cannot register more students.");
             }
         } else {
-            System.out.println("Cannot find student or course with IDs. Register failed.");
+            System.out.println("Student or course not found with IDs. Register failed.");
         }
-    }
-
-    @Override
-    public String toString() {
-        String studentsStr = "[";
-        for (Student student : students) {
-            if (student != null) {
-                studentsStr += "]";
-            }
-
-        }
-        return "SchoolManagementSystem {" +
-                "Students=" + studentsStr +
-                ", Courses=" + courses +
-                ", Teachers=" + teachers +
-                ", Departments=" + departments +
-                '}';
     }
 }

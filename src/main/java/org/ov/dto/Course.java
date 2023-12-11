@@ -3,6 +3,7 @@ package org.ov.dto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.Arrays;
 
@@ -30,7 +31,7 @@ public class Course {
         this.courseId = String.format("C%03d",nextId++);
         this.students = new Student[5];
     }
-    
+
     public void registerStudent(Student studentName) {
         if (studentNum < 5 && !isStudentRegistered(String.valueOf(studentName))) {
             students[studentNum] = studentName;
