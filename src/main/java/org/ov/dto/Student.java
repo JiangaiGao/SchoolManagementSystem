@@ -35,26 +35,10 @@ public class Student {
      * @author jiangaiGao
      */
     public void registerCourse(Course courseName) {
-        if (courseNum < 5 && !isCourseRegistered(String.valueOf(courseName))) {
+        if (courseNum < 5) {
             courses[courseNum] = courseName;
             courseNum++;
         }
-    }
-
-    /**
-     * tells if a course is registered
-     *
-     * @param courseName
-     * @return if the course is registered
-     * @author jiangaiGao
-     */
-    private boolean isCourseRegistered(String courseName) {
-        for (int i = 0; i < courseNum; i++) {
-            if (courses[i] != null && courses[i].equals(courseName)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     /**
